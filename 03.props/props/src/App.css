@@ -28,16 +28,26 @@
   color: #61dafb;
 }
 
-.title {
-    background-color: orange;
-    color: red;
-    text-align: center;
+.food{
+  color: red;
 }
-.list{
-  width: 300px;
-  margin: 10px;
+.background{
+  background-color: lightgoldenrodyellow;
+  width: 600px;
+  height: 800px;
 }
-
+.h1title{
+  color: orangered;
+}
+.area{
+  background-color: purple;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+}
+.listarea{
+  justify-items: left;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
