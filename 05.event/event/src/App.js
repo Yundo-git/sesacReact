@@ -6,6 +6,7 @@ import Handler from './components/ex/Handler';
 import { Titlecolor } from './components/ex/Titlecolor';
 import { Titileremove } from './components/ex/Titileremove';
 import { Alltest } from './components/ex/Alltest';
+import Alltest2 from './components/ex/Alltest2';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
     <hr></hr>
     <Alltest></Alltest>
     <hr />
+    <Alltest2></Alltest2>
     </div>
    
   );
