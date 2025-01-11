@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Maplastcss.css'
 
 export const Maplasttest = () => {
@@ -6,38 +6,51 @@ export const Maplasttest = () => {
 
     const [nameText , setNameText] = useState('');
     const [titleText, settitleText] = useState('');
-    const [searchText,setSearchText] = useState('');
+    // const [searchText,setSearchText] = useState('');
+
+    const nameRef = useRef();
+    const titleRef = useRef();
+
 
     const addList = ()=>{
-        const newList = list.concat(
-            {
-                name : nameText,
-                id : list.length +1,
-                title : titleText
-            }
-        )
-        setList(newList);
-        setNameText('');
-        settitleText('')
+        if(!nameText.trim()){
+            nameRef.current.focus();
+        
+        } else if(!titleText.trim()){
+            titleRef.current.focus();
+        }
+        else {
+            const newList = list.concat(
+                {
+                    name : nameText,
+                    id : list.length +1,
+                    title : titleText
+                }
+            )
+            setList(newList);
+            setNameText('');
+            settitleText('')
+        }
+
     }
 
-    const searchId = (e)=>{
-        console.log(searchText)
+    // const searchId = (e)=>{
+    //     console.log(searchText)
 
-    }
+    // }
   
 
   return (
     <>
     <div className='inputdiv'>
         <span>작성자 : 
-            <input type="text" value={nameText} onChange={(e) => {
+            <input type="text" value={nameText} ref={nameRef} onChange={(e) => {
                     setNameText(e.target.value);
                 }}/>
         </span>
         <span>
             제목 : 
-            <input type="text" value={titleText} onChange={(e) =>{
+            <input type="text" value={titleText} ref={titleRef} onChange={(e) =>{
                 settitleText(e.target.value);
             }} />
         </span>
@@ -52,11 +65,9 @@ export const Maplasttest = () => {
 
 
         </select>
-        <input className='padding' type="text" placeholder='검색어' value={searchText}
-         onChange={(e) => {
-            searchId(searchText);
-        }}/>
-        <button className='padding' onClick={searchId} >검색</button>
+        <input className='padding' type="text" placeholder='검색어' 
+        />
+        <button className='padding'  >검색</button>
         </div>
 
         <table className='table'>
