@@ -5,6 +5,7 @@ export default function LifeCycletestChild({fakePosts}) {
 
     // console.log('child >>>',fakePosts.json)
     const [fakePosts1 , setfakePost] = useState([]);
+
     useEffect(() => {
         setTimeout(()=> setfakePost(
            fakePosts
@@ -23,7 +24,6 @@ export default function LifeCycletestChild({fakePosts}) {
         <span className='posttitle'>{value.title}</span>
         </div>
         <h3 className='postbody'>{value.body}</h3>
-
         </div>
 
         )
