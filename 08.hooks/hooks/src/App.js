@@ -6,8 +6,12 @@ import ProductFilter from './conponents/HookTest';
 import ShoppingCartApp from './conponents/HookTest2';
 import { ThemeProvider } from './conponents/ThemeProvider';
 import { ThemeMidele } from './conponents/ThemeMidele';
+import Faq from './conponents/Faq';
+import useTitle from './hooks/useTitle';
+import TodoApp from './conponents/TodoApp';
 
 function App() {
+  useTitle('리엑트 훅스 학습중');
   return (
     <div className="App">
     <UseMemoEx></UseMemoEx>
@@ -23,6 +27,12 @@ function App() {
     <ThemeProvider>
       <ThemeMidele></ThemeMidele>
     </ThemeProvider>
+
+    <hr></hr>
+
+    <Faq></Faq>
+    <hr></hr>
+    <TodoApp></TodoApp>
     </div>
   );
 }
