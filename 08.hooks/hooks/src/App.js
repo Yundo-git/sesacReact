@@ -8,7 +8,10 @@ import { ThemeProvider } from './conponents/ThemeProvider';
 import { ThemeMidele } from './conponents/ThemeMidele';
 import Faq from './conponents/Faq';
 import useTitle from './hooks/useTitle';
-import TodoApp from './conponents/TodoApp';
+import Form from './conponents/react-hook-form/Form';
+// import TodoApp from './conponents/TodoApp';
+
+
 
 function App() {
   useTitle('리엑트 훅스 학습중');
@@ -32,7 +35,10 @@ function App() {
 
     <Faq></Faq>
     <hr></hr>
-    <TodoApp></TodoApp>
+    {/* <TodoApp></TodoApp> */}
+
+    <hr />
+    <Form></Form>
     </div>
   );
 }
