@@ -1,0 +1,101 @@
+$color-pink : pink;
+$color-yellow : yellow;
+$color-green : green;
+
+@mixin move($top,$left){
+    top : $top;
+    left :$left
+}
+
+.container{
+    // display: flex;
+    position: relative;
+    flex-direction: column;
+    .re{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+    }
+    .pink{
+        background-color: $color-pink;
+        animation: pinkmove 2s ease-in;
+        // @include move(50px, 50px);
+        position: absolute;
+
+       
+    }
+    .yellow{
+        background-color: $color-yellow;
+        animation: yellowmove 2s ease-in;
+        @include move(50px,0px);  
+        position: absolute;
+    }   
+    .green{
+        background-color: $color-green;
+        animation: greenmove 2s ease-in;
+        @include move(100px,0px);  
+        position: absolute;
+    }
+
+
+}
+
+@keyframes pinkmove {
+    0%{
+        @include move(0,0 )
+    }
+    25%{
+        @include move(0px,50px)    
+    }
+    50%{
+        @include move(50px,50px )
+
+    }   
+    75%{
+        @include move(50px,0px)
+    }
+    100%{
+        @include move(0px,0px)
+    }
+
+
+}
+
+@keyframes yellowmove{
+    0%{
+        @include move(50px,0 )
+    }
+    25%{
+        @include move(50px,150px)    
+    }
+    50%{
+        @include move(150px,150px )
+
+    }   
+    75%{
+        @include move(150px,0px)
+    }
+    100%{
+        @include move(50px,0px)
+    }
+}
+@keyframes greenmove{
+    0%{
+        @include move(100px,0 )
+    }
+    25%{
+        @include move(100px,250px)    
+    }
+    50%{
+        @include move(250px,250px )
+
+    }   
+    75%{
+        @include move(250px,0px)
+    }
+    100%{
+        @include move(100px,0px)
+    }
+}

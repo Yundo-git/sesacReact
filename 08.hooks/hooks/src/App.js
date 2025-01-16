@@ -9,6 +9,7 @@ import { ThemeMidele } from './conponents/ThemeMidele';
 import Faq from './conponents/Faq';
 import useTitle from './hooks/useTitle';
 import Form from './conponents/react-hook-form/Form';
+import HookFormTest from './conponents/react-hook-form/HookFormTest';
 // import TodoApp from './conponents/TodoApp';
 
 
@@ -39,6 +40,9 @@ function App() {
 
     <hr />
     <Form></Form>
+
+    <hr />
+    <HookFormTest></HookFormTest>
     </div>
   );
 }
