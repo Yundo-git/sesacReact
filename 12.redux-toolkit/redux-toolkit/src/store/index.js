@@ -2,6 +2,7 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './counterSlice';
+import visibleSlice from './change'
 
 // # configureStore
 // - store 생성
@@ -9,7 +10,9 @@ import counterReducer from './counterSlice';
 //   ㄴ 객체 형태로 전달, 키는 상태 이름이 된다.
 const store = configureStore({
     reducer: {
-        counter: counterReducer, // "counter" 라는 상태를 counterReducer로 관리. // 변수명 마음대로
+        counter: counterReducer,
+        visible : visibleSlice,
+        // "counter" 라는 상태를 counterReducer로 관리. // 변수명 마음대로
     },
 });
 export default store;

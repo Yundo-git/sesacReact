@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Box.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { amount, minus, plus } from './store/counterSlice';
+import { change } from './store/change';
 
 export default function UseToolkit() {
     // #4. 상태 가져와서 사용
@@ -49,15 +50,20 @@ const Box3 = () => {
 // Box4 컴포넌트 (data 사용할 컴포넌트)
 const Box4 = () => {
     const count = useSelector((state) => state.counter.count);
-
+    const visible = useSelector((state) => state.visible)
+    console.log('visible >>>>' , visible)
+    console.log('count >>>>' , count)
     // #5. 액션 함수 실행!
     const dispatch = useDispatch();
     return (
         <div className="Box4">
             <h2>Box4 : {count}</h2>
+            {/* <h2>{visible}</h2> */}
+            <h2>{visible ? '지금 값은 "참"입니다.':'지금 값은 "거짓"입니다.'}</h2>
             <button onClick={() => dispatch(plus())}>PLUS</button>
             <button onClick={() => dispatch(minus())}>Minus</button>
             <button onClick={() => dispatch(amount())}> AMOUNT</button>
+            <button onClick={()=> dispatch(change())}>change</button>
         </div>
     );
 };

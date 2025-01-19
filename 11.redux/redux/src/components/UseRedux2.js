@@ -6,9 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { minus, plus, changeVisibility } from '../store/actions';
 
 export default function UseRedux2() {
+
+    
     // #6. redux 사용!
     const count = useSelector((state) => state.counter.count);
     console.log('count >>> ', count);
+
+
+    
 
     return (
         <div>
