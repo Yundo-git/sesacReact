@@ -3,6 +3,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './counterSlice';
 import visibleSlice from './change'
+import moneySlice from './BankStore'
 
 // # configureStore
 // - store 생성
@@ -12,6 +13,7 @@ const store = configureStore({
     reducer: {
         counter: counterReducer,
         visible : visibleSlice,
+        money : moneySlice
         // "counter" 라는 상태를 counterReducer로 관리. // 변수명 마음대로
     },
 });
